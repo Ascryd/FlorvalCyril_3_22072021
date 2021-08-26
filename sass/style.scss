@@ -1,0 +1,19 @@
+@import "Utils/variables";
+@import "Utils/mixins";
+
+@import "Base/base";
+
+@import "Layout/header";
+
+@import "Page/acceuil";
+
+
+footer {
+    background-color: rgb(49, 49, 49);
+    color: white;
+
+    h2 {
+        font-family: Shrikhand;
+    }
+}
+

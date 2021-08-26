@@ -1,0 +1,177 @@
+.localisation {
+    background-color: rgba(167, 167, 167, 0.233);
+    width: 100%;
+    height: 48px;
+    @include flex-center;
+    gap: 17px;
+    
+    &__p{
+        color: rgb(63, 63, 63);
+    }
+
+    &__i {
+        color: rgb(63, 63, 63);
+    }
+}
+
+
+
+.reservation {
+    width: 100%;
+    height: 287px;
+    background-color: rgba(231, 231, 231, 0.479);
+    display: flex;
+    justify-content: center;
+    
+    &__content {
+        width: 300px;
+        @include flex-center;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        width: 270px;
+        @include h2-size;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.05em;
+        font-weight: 300;
+    }
+
+    .btn {
+        @include flex-center;
+        background: linear-gradient(to top left, $colour-primary, $colour-secondary);
+        height: 50px;
+        width: 215px;
+        border-radius: 50px;
+        color: white;
+        box-shadow: rgb(109, 109, 109) 1px 1px 4px;
+        margin-top: 20px;
+    }
+}
+
+
+
+.fonctionnement {
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 34px;
+
+    h2 {
+        @include h2-size;
+        @include h2-padding;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        .list__cards {
+            gap: 25px;
+            display: flex;
+            align-items: center;
+            height: 75px;
+            width: 320px;
+            background-color: rgb(240, 240, 240);
+            border-radius: 20px;
+            box-shadow: rgb(189, 189, 189) 0px 1px 13px;
+
+            p, i {
+                position: relative;
+                right: 12px;
+            }
+
+            .cards__number {
+                background-color: $colour-primary;
+                width: 23px;
+                height: 23px;
+                @include flex-center;
+                border-radius: 50px;
+                color: white;
+                font-size: 0.8em;
+            }
+        }
+    
+        .list__cards--purple {
+            background-color: rgba(137, 43, 226, 0.13);
+            
+            i {
+                color: $colour-primary;
+            }
+        }
+    }
+}
+
+
+
+.restaurants {
+    height: auto;
+    background-color: rgba(231, 231, 231, 0.479);
+
+    h2 {
+        @include h2-size;
+        padding: 58px 0 26px 0;
+        @include h2-padding;
+    }
+
+    &__list {
+        gap: 17px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 63px;
+    }
+
+    &__cards {
+        width: 335px;
+        height: 250px;
+        border-radius: 15px;
+        box-shadow: rgb(189, 189, 189) 0px 1px 13px;
+    
+        img {
+            width: 100%;
+            height: 173px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .cards__description {
+            height: 78px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .pres {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 7px;
+                padding-left: 10px;
+            }
+
+            h3 {
+                font-size: 1.1em;
+                font-weight: 600;
+            }
+
+            p {
+                font-weight: 300;
+            }
+
+            i {
+                padding-right: 23px;
+                font-size: 1.5em;
+            }
+        }
+    }
+}
