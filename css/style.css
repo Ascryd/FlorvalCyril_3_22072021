@@ -36,7 +36,66 @@ body {
   font-size: medium;
 }
 
-header {
+.header-menu {
+  width: 100%;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-menu img {
+  width: 170px;
+}
+
+.header-menu i {
+  font-size: 1.2em;
+  position: relative;
+  right: 64px;
+  color: #3f3f3f;
+}
+
+footer {
+  background-color: #313131;
+  position: absolute;
+  width: 100%;
+  height: 200px;
+}
+
+footer h2 {
+  font-family: Shrikhand;
+  font-size: 1.2em;
+}
+
+footer .footer__content {
+  height: 200px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+}
+
+footer .footer__content .footer__list {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  gap: 10px;
+}
+
+footer .footer__content i {
+  width: 25px;
+  font-size: 0.8em;
+}
+
+footer .footer__content a {
+  font-size: 0.95em;
+  color: white;
+  text-decoration: none;
+}
+
+.header-acceuil {
   width: 100%;
   height: 63px;
   display: flex;
@@ -45,7 +104,7 @@ header {
   box-shadow: rgba(131, 131, 131, 0.514) 0px 1px 3px;
 }
 
-header img {
+.header-acceuil img {
   width: 170px;
 }
 
@@ -232,12 +291,104 @@ header img {
   font-size: 1.5em;
 }
 
-footer {
-  background-color: #313131;
-  color: white;
+.illustration {
+  height: 260px;
+  width: auto;
+  z-index: 0;
 }
 
-footer h2 {
-  font-family: Shrikhand;
+.illustration img {
+  height: 100%;
+}
+
+.menu {
+  z-index: 1;
+  height: auto;
+  background-color: #e9e9e9;
+  border-radius: 35px 35px 0 0;
+  position: relative;
+  top: -50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 36px;
+}
+
+.menu__name {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding-top: 40px;
+  padding-left: 20px;
+}
+
+.menu__name p {
+  font-family: shrikhand;
+  font-size: 1.7em;
+}
+
+.menu__name i {
+  font-size: 1.5em;
+}
+
+.menu_cat {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu_cat h3 {
+  padding-bottom: 24px;
+  padding-left: 20px;
+}
+
+.menu_cat h3 .green-underline {
+  text-decoration: underline #99E2D0 3px;
+  text-underline-offset: 9px;
+}
+
+.menu_cat .global__plat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+.menu_cat .plat {
+  height: 68px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  gap: 8px;
+  border-radius: 15px;
+  padding: 0 21px 0 11px;
+  box-shadow: #bdbdbd 0px 1px 13px;
+}
+
+.menu_cat .plat__name {
+  display: flex;
+  gap: 7px;
+}
+
+.menu_cat .plat__name h4 {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.menu_cat .plat__details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu_cat .plat__details .ingredients {
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.menu_cat .plat__details .price {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #353535;
 }
 /*# sourceMappingURL=style.css.map */
