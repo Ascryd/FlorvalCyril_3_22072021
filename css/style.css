@@ -81,6 +81,12 @@ footer {
   justify-content: center;
 }
 
+@media screen and (min-width: 600px) {
+  footer {
+    height: 150px;
+  }
+}
+
 footer h2 {
   font-family: Shrikhand;
   font-size: 1.2em;
@@ -110,6 +116,7 @@ footer .footer__content {
     gap: 50px;
     padding-left: 40px;
     width: 1440px;
+    height: 150px;
   }
 }
 
@@ -170,6 +177,12 @@ footer .footer__content a {
   justify-content: center;
 }
 
+@media screen and (min-width: 800px) {
+  .reservation {
+    height: 220px;
+  }
+}
+
 .reservation__content {
   width: 300px;
   display: flex;
@@ -180,11 +193,23 @@ footer .footer__content a {
   margin-bottom: 15px;
 }
 
+@media screen and (min-width: 800px) {
+  .reservation__content {
+    width: auto;
+  }
+}
+
 .reservation h2 {
   width: 270px;
   font-size: 1.5em;
   font-weight: 600;
   text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  .reservation h2 {
+    width: auto;
+  }
 }
 
 .reservation p {

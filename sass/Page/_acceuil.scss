@@ -36,6 +36,9 @@
     background-color: rgba(231, 231, 231, 0.479);
     display: flex;
     justify-content: center;
+    @include acceuil-responsive{
+        height: 220px;
+    }
     
     &__content {
         width: 300px;
@@ -43,12 +46,18 @@
         flex-direction: column;
         gap: 15px;
         margin-bottom: 15px;
+        @include acceuil-responsive {
+            width: auto;
+        }
     }
 
     h2 {
         width: 270px;
         @include h2-size;
         text-align: center;
+        @include acceuil-responsive {
+            width: auto;
+        }
     }
 
     p {
