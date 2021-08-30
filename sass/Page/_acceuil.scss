@@ -10,6 +10,8 @@
 }
 
 
+
+
 .localisation {
     background-color: rgba(167, 167, 167, 0.233);
     width: 100%;
@@ -60,12 +62,30 @@
 
 
 
+
+section {
+    @include acceuil-responsive {
+        display: flex;
+        flex-direction: row-reverse;
+        max-width: 1440px;
+        margin: 20px auto;
+        padding: 0 20px;
+        gap: 20px;
+    } 
+}
+
+
 .fonctionnement {
     height: 440px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 34px;
+    
+    @include acceuil-responsive {
+        border-radius: 15px;
+        background-color: rgba(231, 231, 231, 0.479);
+    }
 
     h2 {
         @include h2-size;
@@ -77,6 +97,8 @@
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        margin: 0 20px;
+
 
         .list__cards {
             gap: 25px;
@@ -116,14 +138,22 @@
 
 
 
+
 .restaurants {
     height: auto;
     background-color: rgba(231, 231, 231, 0.479);
+    @include acceuil-responsive {
+        border-radius: 15px
+    }
 
     h2 {
         @include h2-size;
         padding: 58px 0 26px 0;
         @include global-padding;
+
+        @include acceuil-responsive {
+            padding-top: 40px;
+        }
     }
 
     &__list {
@@ -131,14 +161,22 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding-bottom: 63px;
+        padding-bottom: 58px;
+        margin: 0 20px;
+        
+        @include acceuil-responsive {
+            padding-bottom: 40px;
+        }
     }
 
     &__cards {
-        width: 335px;
+        max-width: 700px;
+        min-width: 320px;
         height: 250px;
         border-radius: 15px;
+        flex: 1;
         @include cards-shadow;
+       
     
         img {
             width: 100%;

@@ -4,17 +4,32 @@
     justify-content: center;
 }
 
+
 @mixin h2-size {
     font-size: 1.5em;
     font-weight: 600;
 }
+
 
 @mixin global-padding {
     padding-left: 20px;
 }
 
 
-
 @mixin cards-shadow {
     box-shadow: rgb(189, 189, 189) 0px 1px 13px;
+}
+
+
+@mixin acceuil-responsive {
+    @media screen and (min-width: 800px){
+        @content;
+    }
+}
+
+
+@mixin footer-responsive {
+    @media screen and (min-width: 600px){
+        @content;
+    }
 }
