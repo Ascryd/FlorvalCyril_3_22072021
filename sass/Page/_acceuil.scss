@@ -55,16 +55,7 @@
         font-weight: 300;
     }
 
-    .btn {
-        @include flex-center;
-        background: linear-gradient(to top left, $colour-primary, $colour-secondary);
-        height: 50px;
-        width: 215px;
-        border-radius: 50px;
-        color: white;
-        box-shadow: rgb(109, 109, 109) 1px 1px 4px;
-        margin-top: 20px;
-    }
+    
 }
 
 
