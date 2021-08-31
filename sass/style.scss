@@ -12,4 +12,125 @@
 @import "Page/menu";
 
 
+.illustration {
+    height: 260px;
+    width: 100%;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
 
+.menu {
+    height: auto;
+    background-color: rgb(233, 233, 233);
+    border-radius: 35px 35px 0 0;
+    position: relative;
+    top: -50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+    padding-bottom: 58px;
+    @include menu-responsive {
+        align-items: center;
+    }
+
+    &__name {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        padding-top: 40px;
+        @include global-padding;
+        @include menu-responsive {
+            width: 1440px;
+        }
+
+        p {
+            font-family: shrikhand;
+            font-size: 1.7em;
+        }
+
+        i {
+            font-size: 1.5em;
+        }
+    }
+}
+
+.global_menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.menu_cat {
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        padding-bottom: 24px;
+        @include global-padding;
+
+        .green-underline {
+        text-decoration: underline $colour-tertiary 3px;
+        text-underline-offset: 9px;
+        }
+    }
+
+    .global__plat {
+        display: flex;
+        flex-direction: column;
+        // flex-wrap: wrap;
+        align-items: center;
+        gap: 13px;
+    }
+    
+    .plat {
+        // min-height: 68px;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        gap: 8px;
+        border-radius: 15px;
+        padding: 13px 21px 11px 11px;
+        @include cards-shadow;
+
+
+        &__name {
+            display: flex;
+            gap: 7px;
+
+            h4 {
+                font-size: 1.1em;
+                font-weight: 500;
+                // border: solid violet;
+                width: 270px;
+            }
+        }
+
+        &__details {
+            display: flex;
+            justify-content: space-between;
+
+            .ingredients {
+                font-size: 0.9em;
+                font-weight: 300;
+            }
+
+            .price {
+                font-size: 0.95em;
+                font-weight: 600;
+                color: rgb(53, 53, 53);
+            }
+        }
+    }
+}
+
+.commander {
+    display: flex;
+    justify-content: center;
+}

@@ -1,12 +1,17 @@
-footer {
+.footer {
     background-color: rgb(49, 49, 49);
     position: absolute;
     width: 100%;
     height: 200px;
     display: flex;
-    justify-content: center;
+    &--menu {
+        margin-top: -50px;
+    }
+    
+    
     @include footer-responsive {
         height: 150px;
+        justify-content: center;
     }
 
     h2 {

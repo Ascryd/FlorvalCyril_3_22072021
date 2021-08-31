@@ -33,3 +33,10 @@
         @content;
     }
 }
+
+
+@mixin menu-responsive{
+    @media screen and (min-width: 1440px){
+        @content;
+    }
+}
