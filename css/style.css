@@ -378,7 +378,7 @@ body {
   font-weight: 300;
 }
 
-.restaurants__cards .cards__description i {
+.restaurants__cards .cards__description .fa-heart {
   padding-right: 23px;
   font-size: 1.5em;
 }
@@ -392,6 +392,17 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+@keyframes SlideDown {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .menu {
@@ -468,13 +479,45 @@ body {
 .menu_cat .plat {
   width: 350px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-color: white;
   gap: 8px;
   border-radius: 15px;
-  padding: 13px 21px 11px 11px;
+  padding-left: 11px;
   box-shadow: #bdbdbd 0px 1px 13px;
+  overflow: hidden;
+}
+
+.menu_cat .plat__fix {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu_cat .plat__hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 15px 15px 0;
+  height: 100%;
+  width: 0%;
+  background-color: #99E2D0;
+  transition: 500ms;
+}
+
+.menu_cat .plat__hover i {
+  color: white;
+  font-size: 1.3em;
+}
+
+.menu_cat .plat:hover > .plat__hover {
+  width: 25%;
+  transition-duration: 500ms;
+}
+
+.menu_cat .plat:hover > .plat__hover i {
+  transition: 500ms;
+  transform: rotate(360deg);
 }
 
 .menu_cat .plat__name {
@@ -486,6 +529,7 @@ body {
   font-size: 1.1em;
   font-weight: 500;
   width: 270px;
+  padding-top: 13px;
 }
 
 .menu_cat .plat__details {
@@ -496,12 +540,54 @@ body {
 .menu_cat .plat__details .ingredients {
   font-size: 0.9em;
   font-weight: 300;
+  padding-bottom: 11px;
 }
 
 .menu_cat .plat__details .price {
   font-size: 0.95em;
   font-weight: 600;
   color: #353535;
+  padding-right: 21px;
+}
+
+.menu_cat .plat--1 {
+  animation: SlideDown 1s 200ms;
+}
+
+.menu_cat .plat--2 {
+  animation: SlideDown 1s 400ms;
+}
+
+.menu_cat .plat--3 {
+  animation: SlideDown 1s 600ms;
+}
+
+.menu_cat .plat--4 {
+  animation: SlideDown 1s 800ms;
+}
+
+.menu_cat .plat--5 {
+  animation: SlideDown 1s 1000ms;
+}
+
+.menu_cat .plat--6 {
+  animation: SlideDown 1s 1200ms;
+}
+
+.menu_cat .plat--7 {
+  animation: SlideDown 1s 1400ms;
+}
+
+.menu_cat .plat--8 {
+  animation: SlideDown 1s 1600ms;
+}
+
+.menu_cat .plat--9 {
+  animation: SlideDown 1s 1800ms;
+}
+
+.menu_cat .plat--10 {
+  animation: SlideDown 1s 2000ms;
 }
 
 .commander {

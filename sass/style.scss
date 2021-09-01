@@ -12,13 +12,15 @@
 @import "Page/menu";
 
 
-.illustration {
-    height: 260px;
-    width: 100%;
-    img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+
+@keyframes SlideDown {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -69,6 +71,7 @@
     display: flex;
     flex-direction: column;
 
+
     h3 {
         padding-bottom: 24px;
         @include global-padding;
@@ -82,23 +85,52 @@
     .global__plat {
         display: flex;
         flex-direction: column;
-        // flex-wrap: wrap;
         align-items: center;
         gap: 13px;
     }
     
     .plat {
-        // min-height: 68px;
         width: 350px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        // flex-direction: column;
         background-color: white;
         gap: 8px;
         border-radius: 15px;
-        padding: 13px 21px 11px 11px;
+        padding-left: 11px;
         @include cards-shadow;
+        overflow: hidden;
 
+        
+
+        &__fix {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &__hover {
+            @include flex-center;
+            border-radius: 0 15px 15px 0;
+            height: 100%;
+            width: 0%;
+            background-color: $colour-tertiary;
+            transition: 500ms;
+        
+            i {
+                color: white;
+                font-size: 1.3em;
+            }   
+        }
+        
+        &:hover > .plat__hover{
+            width: 25%;
+            transition-duration: 500ms;
+            i {
+                transition: 500ms;
+                transform: rotate(360deg);
+            }
+        }
 
         &__name {
             display: flex;
@@ -107,8 +139,8 @@
             h4 {
                 font-size: 1.1em;
                 font-weight: 500;
-                // border: solid violet;
                 width: 270px;
+                padding-top: 13px;
             }
         }
 
@@ -119,15 +151,26 @@
             .ingredients {
                 font-size: 0.9em;
                 font-weight: 300;
+                padding-bottom: 11px;
             }
 
             .price {
                 font-size: 0.95em;
                 font-weight: 600;
                 color: rgb(53, 53, 53);
+                padding-right: 21px;
             }
         }
+    }    
+
+
+    @for $i from 1 to 11 {
+        .plat--#{$i} {
+            animation: SlideDown 1s ($i *200ms);
+        }
+        
     }
+
 }
 
 .commander {
