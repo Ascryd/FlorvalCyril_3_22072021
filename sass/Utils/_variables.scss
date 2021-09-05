@@ -1,4 +1,8 @@
 $colour-primary: #9356DC;
+$colour-primary--darken: darken($colour-primary, 10%);
+
 $colour-secondary: #FF79DA;
+$colour-secondary--darken: darken($colour-secondary, 10%);
+
 $colour-tertiary: #99E2D0;
 
