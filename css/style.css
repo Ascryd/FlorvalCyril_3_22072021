@@ -1,7 +1,6 @@
 @keyframes SlideDown {
   from {
     transform: translateY(50px);
-    opacity: 0;
   }
   to {
     transform: translateY(0);
@@ -19,16 +18,7 @@
 }
 
 @keyframes loading {
-  0% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  99% {
-    z-index: 1;
-  }
-  100% {
+  to {
     opacity: 0;
     z-index: -1;
   }
@@ -101,11 +91,55 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(to top left, #782cd3, #ff46cc);
+  background: linear-gradient(to top left, #a16be0, #ff93e1);
   opacity: 0;
   z-index: -1;
   transition: opacity 400ms;
   box-shadow: #6d6d6d 2px 2px 15px;
+}
+
+.loading {
+  z-index: 2;
+  position: fixed;
+  background-color: #e2e2e2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loading 600ms forwards;
+  animation-delay: 2s;
+  opacity: 1;
+}
+
+.loading__loader-1 {
+  position: absolute;
+  border: solid 6px rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border-top: #99E2D0 solid 4px;
+  animation: spin 1200ms linear infinite;
+}
+
+.loading__loader-2 {
+  position: absolute;
+  border: solid 6px rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border-top: #FF79DA solid 4px;
+  animation: spin 1000ms linear infinite;
+}
+
+.loading__loader-3 {
+  position: absolute;
+  border: solid 6px rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-top: #9356DC solid 4px;
+  animation: spin 900ms linear infinite;
 }
 
 .header-menu {
@@ -197,7 +231,7 @@ body {
   text-decoration: none;
 }
 
-.header-acceuil {
+.header-accueil {
   width: 100%;
   height: 63px;
   display: flex;
@@ -206,7 +240,7 @@ body {
   box-shadow: rgba(131, 131, 131, 0.514) 0px 1px 3px;
 }
 
-.header-acceuil img {
+.header-accueil img {
   width: 170px;
 }
 
@@ -220,11 +254,19 @@ body {
   gap: 17px;
 }
 
-.localisation__p {
+.localisation__i {
   color: #3f3f3f;
 }
 
-.localisation__i {
+.localisation__input {
+  font-size: 1em;
+  background-color: rgba(235, 235, 235, 0.233);
+  border: none;
+  outline-style: none;
+}
+
+.localisation__input::placeholder {
+  opacity: 1;
   color: #3f3f3f;
 }
 
@@ -414,6 +456,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .restaurants__cards .cards__description .pres {
@@ -434,9 +477,44 @@ body {
   font-weight: 300;
 }
 
-.restaurants__cards .cards__description .fa-heart {
-  padding-right: 23px;
+.fa-heart {
+  margin-right: 23px;
   font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-heart--vide {
+  color: black;
+  z-index: -1;
+}
+
+.fa-heart--full {
+  color: transparent;
+  position: absolute;
+  right: 0;
+}
+
+.fa-heart--full:hover {
+  z-index: 2;
+  animation: like 400ms ease-in-out forwards;
+}
+
+.fa-heart--full:hover + .fa-heart--vide {
+  opacity: 0;
+}
+
+@keyframes like {
+  from {
+    scale: 0;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    background: linear-gradient(to top, #FF79DA, #9356DC);
+    background-clip: text;
+  }
 }
 
 .illustration {
@@ -505,13 +583,20 @@ body {
 }
 
 .menu_cat h3 {
+  color: #4d4d4d;
   padding-bottom: 24px;
   padding-left: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.menu_cat h3 .green-underline {
-  text-decoration: underline #99E2D0 3px;
-  text-underline-offset: 9px;
+.menu_cat h3::after {
+  position: relative;
+  top: 5px;
+  content: "";
+  width: 38px;
+  height: 3px;
+  background-color: #99E2D0;
 }
 
 .menu_cat .global__plat {
@@ -522,6 +607,7 @@ body {
 }
 
 .menu_cat .plat {
+  opacity: 0;
   width: 350px;
   display: flex;
   background-color: white;
@@ -556,7 +642,7 @@ body {
 }
 
 .menu_cat .plat:hover > .plat__hover {
-  width: 25%;
+  width: 60px;
   transition-duration: 500ms;
 }
 
@@ -573,8 +659,11 @@ body {
 .menu_cat .plat__name h4 {
   font-size: 1.1em;
   font-weight: 500;
-  width: 270px;
+  max-width: 300px;
   padding-top: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu_cat .plat__details {
@@ -582,13 +671,19 @@ body {
   justify-content: space-between;
 }
 
-.menu_cat .plat__details .ingredients {
+.menu_cat .plat .ingredients {
   font-size: 0.9em;
   font-weight: 300;
   padding-bottom: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 5px;
+  min-width: 150px;
+  max-width: 600px;
 }
 
-.menu_cat .plat__details .price {
+.menu_cat .plat .price {
   font-size: 0.95em;
   font-weight: 600;
   color: #353535;
@@ -596,43 +691,43 @@ body {
 }
 
 .menu_cat .plat--1 {
-  animation: SlideDown 1s 200ms;
+  animation: SlideDown 1s 200ms forwards;
 }
 
 .menu_cat .plat--2 {
-  animation: SlideDown 1s 400ms;
+  animation: SlideDown 1s 400ms forwards;
 }
 
 .menu_cat .plat--3 {
-  animation: SlideDown 1s 600ms;
+  animation: SlideDown 1s 600ms forwards;
 }
 
 .menu_cat .plat--4 {
-  animation: SlideDown 1s 800ms;
+  animation: SlideDown 1s 800ms forwards;
 }
 
 .menu_cat .plat--5 {
-  animation: SlideDown 1s 1000ms;
+  animation: SlideDown 1s 1000ms forwards;
 }
 
 .menu_cat .plat--6 {
-  animation: SlideDown 1s 1200ms;
+  animation: SlideDown 1s 1200ms forwards;
 }
 
 .menu_cat .plat--7 {
-  animation: SlideDown 1s 1400ms;
+  animation: SlideDown 1s 1400ms forwards;
 }
 
 .menu_cat .plat--8 {
-  animation: SlideDown 1s 1600ms;
+  animation: SlideDown 1s 1600ms forwards;
 }
 
 .menu_cat .plat--9 {
-  animation: SlideDown 1s 1800ms;
+  animation: SlideDown 1s 1800ms forwards;
 }
 
 .menu_cat .plat--10 {
-  animation: SlideDown 1s 2000ms;
+  animation: SlideDown 1s 2000ms forwards;
 }
 
 .commander {

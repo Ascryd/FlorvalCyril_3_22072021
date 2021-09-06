@@ -1,0 +1,35 @@
+.loading {
+    z-index: 2;
+    position: fixed;
+    background-color: rgb(226, 226, 226);
+    width: 100%;
+    height: 100%;
+    @include flex-center;
+    animation: loading 600ms forwards;
+    animation-delay: 2s;
+    opacity: 1;
+
+    &__loader-1 {
+        @include loader;
+        width: 100px;
+        height: 100px;
+        border-top: $colour-tertiary solid 4px;
+        animation: spin 1200ms linear infinite;
+    }
+
+    &__loader-2 {
+        @include loader;
+        width: 70px;
+        height: 70px;
+        border-top: $colour-secondary solid 4px;
+        animation: spin 1000ms linear infinite;
+    }
+
+    &__loader-3 {
+        @include loader;
+        width: 40px;
+        height: 40px;
+        border-top: $colour-primary solid 4px;
+        animation: spin 900ms linear infinite;
+    }
+}

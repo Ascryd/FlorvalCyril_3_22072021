@@ -21,7 +21,7 @@
 }
 
 
-@mixin acceuil-responsive {
+@mixin accueil-responsive {
     @media screen and (min-width: 800px){
         @content;
     }

@@ -1,4 +1,4 @@
-.header-acceuil {
+.header-accueil {
     width: 100%;
     height: 63px;
     @include flex-center;
@@ -18,13 +18,20 @@
     height: 48px;
     @include flex-center;
     gap: 17px;
-    
-    &__p{
-        color: rgb(63, 63, 63);
-    }
 
     &__i {
         color: rgb(63, 63, 63);
+    }
+
+    &__input {
+        font-size: 1em;
+        background-color: rgba(235, 235, 235, 0.233);
+        border: none;
+        outline-style: none;
+        &::placeholder {
+            opacity: 1;
+            color: rgb(63, 63, 63);
+        }
     }
 }
 
@@ -36,7 +43,7 @@
     background-color: rgba(231, 231, 231, 0.479);
     display: flex;
     justify-content: center;
-    @include acceuil-responsive{
+    @include accueil-responsive{
         height: 220px;
     }
     
@@ -46,7 +53,7 @@
         flex-direction: column;
         gap: 15px;
         margin-bottom: 15px;
-        @include acceuil-responsive {
+        @include accueil-responsive {
             width: auto;
         }
     }
@@ -55,7 +62,7 @@
         width: 270px;
         @include h2-size;
         text-align: center;
-        @include acceuil-responsive {
+        @include accueil-responsive {
             width: auto;
         }
     }
@@ -74,7 +81,7 @@
 
 
 .accueil-section {
-    @include acceuil-responsive {
+    @include accueil-responsive {
         display: flex;
         flex-direction: row-reverse;
         max-width: 1440px;
@@ -92,7 +99,7 @@
     flex-direction: column;
     gap: 34px;
     
-    @include acceuil-responsive {
+    @include accueil-responsive {
         border-radius: 15px;
         background-color: rgba(231, 231, 231, 0.479);
     }
@@ -152,7 +159,7 @@
 .restaurants {
     height: auto;
     background-color: rgba(231, 231, 231, 0.479);
-    @include acceuil-responsive {
+    @include accueil-responsive {
         border-radius: 15px
     }
 
@@ -161,7 +168,7 @@
         padding: 58px 0 26px 0;
         @include global-padding;
 
-        @include acceuil-responsive {
+        @include accueil-responsive {
             padding-top: 40px;
         }
     }
@@ -174,7 +181,7 @@
         padding-bottom: 58px;
         margin: 0 20px;
         
-        @include acceuil-responsive {
+        @include accueil-responsive {
             padding-bottom: 40px;
         }
     }
@@ -200,6 +207,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
 
             .pres {
                 height: 100%;
@@ -219,11 +227,49 @@
                 font-weight: 300;
             }
 
-            .fa-heart {
-                padding-right: 23px;
-                font-size: 1.5em;
-                
-            }
         }
+            
+    }
+}
+
+
+
+.fa-heart {
+    margin-right: 23px;
+    font-size: 1.5em;
+    @include flex-center;
+
+    &--vide {
+        color: black;
+        z-index: -1;
+    }
+
+    &--full {
+        color: transparent;
+        position: absolute;
+        right: 0;
+        
+
+        &:hover {
+            z-index: 2;
+            animation: like 400ms ease-in-out forwards;
+        }
+
+        &:hover + .fa-heart--vide{
+            opacity: 0;
+        }
+    }
+}
+
+
+@keyframes like {
+    from {
+        scale: 0;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+        background: linear-gradient(to top ,$colour-secondary, $colour-primary);
+        background-clip: text;
     }
 }
