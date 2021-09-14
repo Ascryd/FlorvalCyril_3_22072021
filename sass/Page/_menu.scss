@@ -1,0 +1,275 @@
+.illustration {
+    height: 260px;
+    width: 100%;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.menu {
+    height: auto;
+    background-color: rgb(233, 233, 233);
+    border-radius: 35px 35px 0 0;
+    position: relative;
+    top: -50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+    padding-bottom: 58px;
+    @include menu-responsive {
+        align-items: center;
+    }
+
+    &__name {
+        position: relative;
+        width: 375px;
+        display: flex;
+        align-items: center;
+        // gap: 35px;
+        padding-top: 40px;
+        @include global-padding;
+        
+
+        p {
+            font-family: shrikhand;
+            font-size: 1.7em;
+            
+        }
+
+        .coeurs--lpdg {
+            position: absolute;
+            left: 290px;
+        }
+        .coeurs--lne {
+            position: absolute;
+            left: 300px;
+        }
+        .coeurs--alf {
+            position: absolute;
+            left: 235px;
+        }
+        .coeurs--ldds {
+            position: absolute;
+            left: 285px;
+        }
+    }
+}
+
+.global_menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.menu_cat {
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+
+
+    h3 {
+        color: rgb(77, 77, 77);
+        padding-bottom: 24px;
+        @include global-padding;
+        display: flex;
+        flex-direction: column;
+
+        &::after {
+            position: relative;
+            top: 5px;
+            content: "";
+            width: 38px;
+            height: 3px;
+            background-color: $colour-tertiary;
+        }
+    }
+
+    .global__plat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+    }
+  
+    .plat {
+        opacity: 0;
+        width: 350px;
+        display: flex;
+        background-color: white;
+        gap: 8px;
+        border-radius: 15px;
+        padding-left: 11px;
+        @include cards-shadow;
+        overflow: hidden;
+        justify-content: space-between;
+
+        &:hover > .plat__check > .slide {
+            width: 60px;
+            
+        }
+
+        &:hover > .plat__check > .slide > i {
+            transform: rotate(360deg);
+            transition: 500ms;
+        }
+        &__infos {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            overflow: hidden;
+            text-overflow:ellipsis;
+
+            h4 {
+                font-size: 1.1em;
+                font-weight: 500;
+                padding-top: 13px;
+                white-space: wrap;
+            }
+
+            .ingredients {
+                font-size: 0.95em;
+                font-weight: 300;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding-bottom: 13px;
+            }
+        }
+
+        &__check {
+            display: flex;
+            gap: 20px;
+            position: relative;
+
+            .price {
+                font-size: 0.95em;
+                font-weight: 600;
+                color: rgb(53, 53, 53);
+                vertical-align: bottom;
+                position: relative;
+                top: 38px;
+            }
+
+            .slide {
+                height: 100%;
+                width: 0px;
+                background-color: $colour-tertiary;
+                overflow: hidden;
+                @include flex-center;
+                transition: all 500ms;
+
+                i {
+                    color: white;
+                    font-size: 1.3em;
+                }
+            }           
+        }
+    }
+
+    @for $i from 1 to 11 {
+        .plat--#{$i} {
+            animation: SlideDown 1s ($i *200ms) forwards;
+        } 
+    }
+}
+
+.commander {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+   
+        //     .plat {
+//         opacity: 0;
+//         width: 350px;
+//         display: flex;
+//         background-color: white;
+//         gap: 8px;
+//         border-radius: 15px;
+//         padding-left: 11px;
+//         @include cards-shadow;
+//         overflow: hidden;
+
+//         &__fix {
+//             // width: 100%;
+//             flex: 1;
+//             background-color: rgba(0, 0, 255, 0.5);
+//             display: flex;
+//             flex-direction: column;
+//             gap: 8px;
+//         }
+
+//         &__hover {
+//             @include flex-center;
+//             display: flex;
+//             border-radius: 0 15px 15px 0;
+//             height: 100%;
+//             width: 60px;
+//             background-color: $colour-tertiary;
+//             transition: 500ms;
+        
+//             i {
+//                 color: white;
+//                 font-size: 1.3em;
+//             }   
+//         }
+        
+//         &:hover > .plat__hover{
+//             width: 60px;
+//             transition-duration: 500ms;
+//             i {
+//                 transition: 500ms;
+//                 transform: rotate(360deg);
+//             }
+//         }
+
+//         &__name {
+//             // display: flex;
+//             // gap: 7px;
+
+//             h4 {
+//                 font-size: 1.1em;
+//                 font-weight: 500;
+//                 max-width: 300px;
+//                 padding-top: 13px;
+//                 white-space: nowrap;
+//                 overflow: hidden;
+//                 text-overflow: ellipsis;
+//                 background-color: rgba(165, 42, 42, 0.466);
+//             }
+//         }
+
+//         &__details {
+//             display: flex;
+//             justify-content: space-between;
+//             background-color: green;
+//         }
+        
+//         .ingredients {
+//             font-size: 0.9em;
+//             font-weight: 300;
+//             padding-bottom: 11px;
+//             overflow: hidden;
+//             text-overflow: ellipsis;
+//             white-space: nowrap;
+//             padding-right: 5px;
+//             flex: 1;
+//         }
+
+//         .price {
+//             // width: 30px;
+//             font-size: 0.95em;
+//             font-weight: 600;
+//             color: rgb(53, 53, 53);
+//             padding-right: 21px;
+//         }     
+//     }  

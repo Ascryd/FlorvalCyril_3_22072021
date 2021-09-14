@@ -1,0 +1,21 @@
+{
+  "name": "projet-3",
+  "version": "1.0.0",
+  "description": "Projet 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ascryd/Projet-3.git"
+  },
+  "browserslist":"last 4 versions",
+  "author": "Cyril",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ascryd/Projet-3/issues"
+  },
+  "homepage": "https://github.com/Ascryd/Projet-3#readme"
+}

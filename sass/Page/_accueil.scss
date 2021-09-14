@@ -1,0 +1,246 @@
+.header-accueil {
+    width: 100%;
+    height: 63px;
+    @include flex-center;
+    box-shadow: rgba(131, 131, 131, 0.514) 0px 1px 3px;
+    
+    img {
+        width: 170px;
+    }
+}
+
+
+
+
+.localisation {
+    background-color: rgba(167, 167, 167, 0.233);
+    width: 100%;
+    height: 48px;
+    @include flex-center;
+    gap: 17px;
+
+    &__i {
+        color: rgb(63, 63, 63);
+    }
+
+    &__input {
+        font-size: 1em;
+        background-color: rgba(235, 235, 235, 0.233);
+        border: none;
+        outline-style: none;
+        &::placeholder {
+            opacity: 1;
+            color: rgb(63, 63, 63);
+        }
+    }
+}
+
+
+
+.reservation {
+    width: 100%;
+    height: 287px;
+    background-color: rgba(231, 231, 231, 0.479);
+    display: flex;
+    justify-content: center;
+    @include accueil-responsive{
+        height: 220px;
+    }
+    
+    &__content {
+        width: 300px;
+        @include flex-center;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+        @include accueil-responsive {
+            width: auto;
+        }
+    }
+
+    h2 {
+        width: 270px;
+        @include h2-size;
+        text-align: center;
+        @include accueil-responsive {
+            width: auto;
+        }
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.05em;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+
+    
+}
+
+
+
+
+.accueil-section {
+    @include accueil-responsive {
+        display: flex;
+        flex-direction: row-reverse;
+        max-width: 1440px;
+        margin: 20px auto;
+        padding: 0 20px;
+        gap: 20px;
+    } 
+}
+
+
+.fonctionnement {
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 34px;
+    
+    @include accueil-responsive {
+        border-radius: 15px;
+        background-color: rgba(231, 231, 231, 0.479);
+    }
+
+    h2 {
+        @include h2-size;
+        @include global-padding;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 0 20px 0 32px;
+
+
+        .list__cards {
+            gap: 25px;
+            display: flex;
+            align-items: center;
+            height: 75px;
+            width: 320px;
+            background-color: rgb(240, 240, 240);
+            border-radius: 20px;
+            @include cards-shadow;
+
+            p, i {
+                position: relative;
+                right: 12px;
+            }
+
+            .cards__number {
+                background-color: $colour-primary;
+                width: 23px;
+                height: 23px;
+                @include flex-center;
+                border-radius: 50px;
+                color: white;
+                font-size: 0.8em;
+            }
+        }
+    
+        .list__cards--purple {
+            background-color: rgba(137, 43, 226, 0.13);
+            
+            i {
+                color: $colour-primary;
+            }
+        }
+    }
+}
+
+
+
+
+.restaurants {
+    height: auto;
+    background-color: rgba(231, 231, 231, 0.479);
+    @include accueil-responsive {
+        border-radius: 15px
+    }
+
+    h2 {
+        @include h2-size;
+        padding: 58px 0 26px 0;
+        @include global-padding;
+
+        @include accueil-responsive {
+            padding-top: 40px;
+        }
+    }
+
+    &__list {
+        gap: 17px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 58px;
+        margin: 0 20px;
+        
+        @include accueil-responsive {
+            padding-bottom: 40px;
+        }
+    }
+
+    &__cards {
+        max-width: 700px;
+        min-width: 320px;
+        height: 250px;
+        border-radius: 15px;
+        flex: 1;
+        @include cards-shadow;
+        position: relative;
+       
+    
+        img {
+            width: 100%;
+            height: 173px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .new {
+            @include flex-center;
+            height: 30px;
+            width: 80px;
+            position: absolute;
+            right: 10px;
+            top: 13px;
+            z-index: 10;
+            background-color: $colour-tertiary;
+            color: darken($colour-tertiary, 40%);
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .cards__description {
+            height: 78px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+
+            .pres {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 7px;
+                padding-left: 10px;
+            }
+
+            h3 {
+                font-size: 1.1em;
+                font-weight: 600;
+            }
+
+            p {
+                font-weight: 300;
+            }
+        } 
+    }
+}
