@@ -193,6 +193,7 @@
         border-radius: 15px;
         flex: 1;
         @include cards-shadow;
+        position: relative;
        
     
         img {
@@ -200,6 +201,20 @@
             height: 173px;
             object-fit: cover;
             border-radius: 15px 15px 0 0;
+        }
+
+        .new {
+            @include flex-center;
+            height: 30px;
+            width: 80px;
+            position: absolute;
+            right: 10px;
+            top: 13px;
+            z-index: 10;
+            background-color: $colour-tertiary;
+            color: darken($colour-tertiary, 40%);
+            font-size: 0.9em;
+            font-weight: 600;
         }
 
         .cards__description {
@@ -226,50 +241,6 @@
             p {
                 font-weight: 300;
             }
-
-        }
-            
-    }
-}
-
-
-
-.fa-heart {
-    margin-right: 23px;
-    font-size: 1.5em;
-    @include flex-center;
-
-    &--vide {
-        color: black;
-        z-index: -1;
-    }
-
-    &--full {
-        color: transparent;
-        position: absolute;
-        right: 0;
-        
-
-        &:hover {
-            z-index: 2;
-            animation: like 400ms ease-in-out forwards;
-        }
-
-        &:hover + .fa-heart--vide{
-            opacity: 0;
-        }
-    }
-}
-
-
-@keyframes like {
-    from {
-        scale: 0;
-    }
-    to {
-        opacity: 1;
-        scale: 1;
-        background: linear-gradient(to top ,$colour-secondary, $colour-primary);
-        background-clip: text;
+        } 
     }
 }
