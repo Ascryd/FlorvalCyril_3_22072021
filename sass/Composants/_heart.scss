@@ -14,7 +14,6 @@
             color: transparent;
             position: absolute;
             right: 0;
-            scale: 0;
             opacity: 0;
             transition: all 400ms;
         }   
@@ -22,7 +21,6 @@
 
     &:hover > .fa-heart--full{
         opacity: 1;
-        scale: 1;
         background: linear-gradient(to top ,$colour-secondary, $colour-primary);
         background-clip: text;
     }
